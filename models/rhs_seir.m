@@ -1,5 +1,4 @@
 function dx = rhs_seir(t, x, p)
-%RHS_SEIR Summary of this function goes here
 %   deterministic model
 %   changing transmission rate due to school terms
 %   delay of 4 yrs from birth to susceptible class; low contact rate for
