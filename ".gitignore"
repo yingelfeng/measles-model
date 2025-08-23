@@ -1,0 +1,6 @@
+# MATLAB ignores
+*.asv
+*.m~ 
+*.mex* 
+*.slxc
+.DS_Store
