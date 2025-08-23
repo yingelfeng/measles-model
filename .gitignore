@@ -1,0 +1,13 @@
+# MATLAB autosaves
+*.asv
+*.m~
+
+# MATLAB binaries
+*.mex*
+*.slxc
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
