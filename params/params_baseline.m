@@ -1,10 +1,14 @@
 function p = params_baseline()
-%PARAMS_BASELINE Summary of this function goes here
+% baseline parameters pulled from A comparison of existing measles models
+% by Clifford Allotey
+
+
 %  rates yearly
-p.mu = 0.02;        %   death rate - immigration rate
-p.tau = 4;          %   delay of entry into susceptible class
-p.sigma = 45.66;    %   incubation rate
-p.gamma = 73.05;    %   recovery rate
+p.mu = 0.02/365;        %   death rate - immigration rate
+p.mu_b_fun   = @(t,p) p.mu;     %   birth rate fcn
+p.tau = 4*365;          %   delay of entry into susceptible class
+p.sigma = 45.66/365;    %   incubation rate
+p.gamma = 73.05/365;    %   recovery rate
 p.R0 = 31.19;       %   basic reproduction number
 p.beta = p.R0*(p.gamma+p.mu); %   baseline transmission rate
 p.N = 2445368;      %   initial population size

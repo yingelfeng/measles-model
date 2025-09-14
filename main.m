@@ -7,7 +7,6 @@ clear; clc;
 p = params_baseline();          % includes: N, mu, sigma, gamma, beta, a, school_frac, etc.
 % p.mu_b   = p.mu;                % births = deaths (constant pop)
 % p.v_fun  = @(t,p) 0;            % no vaccination yet
-% p.B_fun  = @(t,p) school_term_forcing(t,p);
 
 X0 = init_state(p);
 
@@ -19,5 +18,5 @@ opts = odeset('RelTol',1e-7,'AbsTol',1e-9);
 [t, X] = ode45(@(t,x) rhs_seir(t,x,p), tspan, X0, opts);
 
 % 4) derived outputs + plots
-out = outputs(t, X, p);
+out = outputs(t, X, p); 
 plot_timeseries(t, X, out);

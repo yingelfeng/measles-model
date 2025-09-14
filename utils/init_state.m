@@ -4,7 +4,7 @@ function X0 = init_state(p)
 S0 = 0.03*p.N;
 E0 = max(1, round(5.17e-5*p.N));
 I0 = max(1, round(5.14e-5*p.N));
-R0 = 0.97*p.N;
+R0 = p.N - S0 - E0 - I0;
 X0 = [S0; E0; I0; R0];
 end
 
