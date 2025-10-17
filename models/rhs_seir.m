@@ -11,13 +11,13 @@ function dx = rhs_seir(t, x, p)
 
     B = school_term_forcing(t,p);
     mu_b = p.mu_b_fun(t - p.tau, p);
-    V = 0; %p.v(t-p.tau); currently pre vaccine era
+    v = p.v_fun(t - p.tau, p);
     lambda = B*I/N;
 
-    dS = mu_b*N*(1-V) - lambda*S - p.mu*S;
+    dS = mu_b*N*(1-v) - lambda*S - p.mu*S;
     dE = lambda*S - (p.sigma+p.mu)*E;
     dI = p.sigma*E - (p.gamma + p.mu)*I;
-    dR = p.gamma*I - p.mu*R + mu_b*N*V;
+    dR = p.gamma*I - p.mu*R + mu_b*N*v;
 
     dx = [dS; dE; dI; dR];
 end
