@@ -7,4 +7,7 @@ xlabel('Days'); ylabel('New infections/day'); title('Incidence');
 
 figure; plot(t, out.R0_inst);
 xlabel('Days'); ylabel('R_0(t)'); title('Instantaneous R_0');
+
+figure; plot(t, out.v_fun);
+xlabel('Days'); ylabel('v\_fun(t)'); title('Vaccine Coverage');
 end

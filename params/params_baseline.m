@@ -18,7 +18,8 @@ p.rho = 0.46;       %   reporting probability
 p.psi = 0.90;       %   reporting overdispersion
 
 % vaccine
-target = 0.90;   k = 0.005;   t0 = 3650;         % slope & midpoint
+target = 0.90;   k = 0.005;   t0 = 365*10;         % slope & midpoint
 p.v_fun = @(t,p) target ./ (1 + exp(-k*(t - t0)));
+
 end
 

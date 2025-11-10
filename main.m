@@ -5,13 +5,11 @@ clear; clc;
 
 % 1) params + initial state
 p = params_baseline();          % includes: N, mu, sigma, gamma, beta, a, school_frac, etc.
-% p.mu_b   = p.mu;                % births = deaths (constant pop)
-%p.v_fun  = @(t,p) 0.85;            % no vaccination yet
 
 X0 = init_state(p);
 
 % 2) time span
-tspan = [0, 365*20];             % 10 years
+tspan = [0, 365*20];             % 20 years
 
 % 3) solve (ode45 OK; if stiff, try ode15s)
 opts = odeset('RelTol',1e-7,'AbsTol',1e-9);
